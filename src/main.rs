@@ -1,3 +1,5 @@
+use std::io;
+
 fn collatz(mut number: i32) -> i32 {
     let mut counter: i32 = 0;
     
@@ -16,25 +18,32 @@ fn collatz(mut number: i32) -> i32 {
 }
 
 fn main() {
-    println!("Hello, world!");
+    loop {
+        println!("Enter a positive integer: ");
+
+        let mut user_input: String = String::new();
+
+        io::stdin().read_line(&mut user_input).expect("Failed to read line");
+
+        let user_input: i32 = match user_input.trim().parse() {
+            Ok(number) => number,
+            Err(_) => continue,
+        };
+        println!("You entered {}", user_input);
+
+        let mut max_number: i32 = 0;
+        let mut max_steps: i32 = 0;
+
+        for i in 1..=user_input {
+            if max_steps < collatz(i) {
+                max_steps = collatz(i);
+                max_number = i;
+            }
+
+            println!("{}: {}", i, collatz(i));
+        }
+
+        println!("{} had the maximum number of steps at {}", max_number, max_steps);
+        break;
+    }
 }
-
-// public static void main(String[] args) {
-//     System.out.print("Enter a positive integer: ");
-//     Scanner scanner = new Scanner(System.in);
-//     int userInput = scanner.nextInt();
-
-//     int maxNumber = 0;
-//     int maxSteps = 0;
-
-//     for (int i = 1; i <= userInput; i++) {
-//         if (maxSteps < collatz(i)) {
-//             maxSteps = collatz(i);
-//             maxNumber = i;
-//         }
-
-//         System.out.printf("%d: %d%n", i, collatz(i));
-//     }
-
-//     System.out.printf("%d had the maximum number of steps at %d", maxNumber, maxSteps);
-// }
