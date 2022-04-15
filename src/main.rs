@@ -1,7 +1,7 @@
 use std::io;
 
-fn collatz(mut number: i32) -> i32 {
-    let mut counter: i32 = 0;
+fn collatz(mut number: u128) -> u128 {
+    let mut counter: u128 = 0;
     
     //if even, divide by 2
     //else times by 3 and add 1
@@ -25,14 +25,14 @@ fn main() {
 
         io::stdin().read_line(&mut user_input).expect("Failed to read line");
 
-        let user_input: i32 = match user_input.trim().parse() {
+        let user_input: u128 = match user_input.trim().parse() {
             Ok(number) => number,
             Err(_) => continue,
         };
         println!("You entered {}", user_input);
 
-        let mut max_number: i32 = 0;
-        let mut max_steps: i32 = 0;
+        let mut max_number: u128 = 0;
+        let mut max_steps: u128 = 0;
 
         for i in 1..=user_input {
             if max_steps < collatz(i) {
@@ -40,7 +40,7 @@ fn main() {
                 max_number = i;
             }
 
-            println!("{}: {}", i, collatz(i));
+            // println!("{}: {}", i, collatz(i));
         }
 
         println!("{} had the maximum number of steps at {}", max_number, max_steps);
