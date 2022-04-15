@@ -1,22 +1,23 @@
+fn collatz(mut number: i32) -> i32 {
+    let mut counter: i32 = 0;
+    
+    //if even, divide by 2
+    //else times by 3 and add 1
+    while number > 1 {
+        counter += 1;
+        if number % 2 == 0 {
+            number = number / 2;
+        } else {
+            number = (3 * number) + 1;
+        }
+    }
+
+    return counter;
+}
+
 fn main() {
     println!("Hello, world!");
 }
-
-// public static int collatz(int number) {
-//     int counter = 0;
-//     if even, divide by 2
-//     else times by 3 and add 1
-//     while (number > 1) {
-//         counter++;
-//         if (number % 2 == 0) {
-//             number = number / 2;
-//         } else {
-//             number = (3 * number) + 1;
-//         }
-//     }
-
-//     return counter;
-// }
 
 // public static void main(String[] args) {
 //     System.out.print("Enter a positive integer: ");
