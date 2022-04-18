@@ -29,7 +29,6 @@ fn main() {
             Ok(number) => number,
             Err(_) => continue,
         };
-        println!("You entered {}", user_input);
 
         let mut max_number: u128 = 0;
         let mut max_steps: u128 = 0;
