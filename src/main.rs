@@ -1,3 +1,5 @@
+mod user_input;
+
 use std::io;
 
 fn collatz(mut number: u128) -> u128 {
@@ -19,16 +21,7 @@ fn collatz(mut number: u128) -> u128 {
 
 fn main() {
     loop {
-        println!("Enter a positive integer: ");
-
-        let mut user_input: String = String::new();
-
-        io::stdin().read_line(&mut user_input).expect("Failed to read line");
-
-        let user_input: u128 = match user_input.trim().parse() {
-            Ok(number) => number,
-            Err(_) => continue,
-        };
+        let user_input: u128 = user_input::get_user_input("Enter a positive integer: ");
 
         let mut max_number: u128 = 0;
         let mut max_steps: u128 = 0;
@@ -39,7 +32,7 @@ fn main() {
                 max_number = i;
             }
 
-            // println!("{}: {}", i, collatz(i));
+            println!("{}: {}", i, collatz(i));
         }
 
         println!("{} had the maximum number of steps at {}", max_number, max_steps);
