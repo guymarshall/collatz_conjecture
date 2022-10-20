@@ -1,7 +1,5 @@
 mod user_input;
 
-use std::io;
-
 fn collatz(mut number: u128) -> u128 {
     let mut counter: u128 = 0;
     
@@ -32,7 +30,7 @@ fn main() {
                 max_number = i;
             }
 
-            println!("{}: {}", i, collatz(i));
+            // println!("{}: {}", i, collatz(i));
         }
 
         println!("{} had the maximum number of steps at {}", max_number, max_steps);
