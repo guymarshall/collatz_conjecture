@@ -34,8 +34,6 @@ fn main() {
         if i % update_frequency == 0 {
             println!("{}: {}", i, result);
         }
-
-        // println!("{}: {}", i, collatz(i));
     }
 
     println!("{} had the maximum number of steps at {}", max_number, max_steps);
