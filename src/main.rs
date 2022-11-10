@@ -1,3 +1,5 @@
+#![forbid(unsafe_code)]
+
 mod user_input;
 
 fn collatz(mut number: i128) -> i128 {
