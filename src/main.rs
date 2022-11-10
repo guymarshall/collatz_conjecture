@@ -1,7 +1,7 @@
 mod user_input;
 
-fn collatz(mut number: u128) -> u128 {
-    let mut counter: u128 = 0;
+fn collatz(mut number: i128) -> i128 {
+    let mut counter: i128 = 0;
     
     //if even, divide by 2
     //else times by 3 and add 1
@@ -18,14 +18,14 @@ fn collatz(mut number: u128) -> u128 {
 }
 
 fn main() {
-    let user_input: u128 = user_input::get_user_input("Enter a positive integer: ");
-    let update_frequency: u128 = user_input::get_user_input("Print update every: ");
+    let user_input: i128 = user_input::get_user_input("Enter a positive integer: ");
+    let update_frequency: i128 = user_input::get_user_input("Print update every: ");
 
-    let mut max_number: u128 = 0;
-    let mut max_steps: u128 = 0;
+    let mut max_number: i128 = 0;
+    let mut max_steps: i128 = 0;
 
     for i in 1..=user_input {
-        let result = collatz(i);
+        let result: i128 = collatz(i);
         if max_steps < result {
             max_steps = result;
             max_number = i;
