@@ -21,7 +21,6 @@ fn collatz(mut number: i128) -> i128 {
 
 fn main() {
     let user_input: i128 = user_input::get_user_input("Enter a positive integer: ");
-    let update_frequency: i128 = user_input::get_user_input("Print update every: ");
 
     let mut max_number: i128 = 0;
     let mut max_steps: i128 = 0;
@@ -31,10 +30,6 @@ fn main() {
         if max_steps < result {
             max_steps = result;
             max_number = i;
-        }
-
-        if i % update_frequency == 0 {
-            println!("{}: {}", i, result);
         }
     }
 
