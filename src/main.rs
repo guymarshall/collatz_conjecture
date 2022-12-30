@@ -6,11 +6,12 @@ mod pretty_print;
 
 extern crate num;
 use num::BigInt;
+use crate::collatz::collatz;
 
 fn main() {
     let user_input: BigInt = user_input::get_user_input("Enter a positive integer: ");
 
-    let result: BigInt = collatz::collatz(&user_input);
+    let result: BigInt = collatz(&user_input);
     
     println!("{} had {} steps", &user_input, result);
     // println!("{} had {} steps", pretty_print::format_result(user_input), pretty_print::format_result(result));
