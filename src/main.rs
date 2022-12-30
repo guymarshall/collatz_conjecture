@@ -17,5 +17,4 @@ fn main() {
     let result: BigInt = collatz(&user_input_exponential);
     
     println!("Base: {}, Exponent: {}, Steps: {}", &base, &exponent, result);
-    // println!("{} had {} steps", pretty_print::format_result(user_input), pretty_print::format_result(result));
 }
