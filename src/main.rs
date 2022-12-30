@@ -9,10 +9,10 @@ use num::BigInt;
 use crate::collatz::collatz;
 
 fn main() {
-    let user_input: u32 = user_input::get_user_input("Enter a positive integer: ");
+    let exponent: u32 = user_input::get_user_input("Enter a positive integer: ");
 
     let base: BigInt = BigInt::from(2);
-    let user_input_exponential: BigInt = base.pow(user_input) + 1;
+    let user_input_exponential: BigInt = base.pow(exponent) + 1;
     
     println!("Finished calculating exponential. Calculating collatz...");
 
