@@ -14,8 +14,6 @@ fn main() {
     let base: BigInt = BigInt::from(2);
     let user_input_exponential: BigInt = base.pow(exponent) + 1;
     
-    println!("Finished calculating exponential. Calculating collatz...");
-
     let result: BigInt = collatz(&user_input_exponential);
     
     println!("Base: {}, Exponent: {}, Steps: {}", &base, &exponent, result);
