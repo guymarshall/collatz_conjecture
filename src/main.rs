@@ -13,6 +13,7 @@ fn main() {
 
     let base: BigInt = BigInt::from(2);
     let user_input_exponential: BigInt = base.pow(user_input) + 1;
+    
     println!("Finished calculating exponential. Calculating collatz...");
 
     let result: BigInt = collatz(&user_input_exponential);
