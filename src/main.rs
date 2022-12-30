@@ -2,7 +2,6 @@
 
 mod user_input;
 mod collatz;
-mod pretty_print;
 
 extern crate num;
 use num::BigInt;
