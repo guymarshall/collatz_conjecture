@@ -7,7 +7,7 @@ extern crate num;
 
 use std::ops::Add;
 use std::str::FromStr;
-use num::{BigInt, Integer};
+use num::{BigInt};
 use crate::collatz::collatz;
 use crate::file_utilities::{read_last_values, write_to_file};
 use thousands::Separable;
@@ -20,15 +20,10 @@ fn main() {
         number = res[0].clone();
         highest_steps = res[1].clone();
     }
-    
+
     loop {
         let steps: BigInt = collatz(&number);
-        
-        if number.is_even() {
-            number = number.add(1);
-            continue;
-        }
-        
+
         if steps > highest_steps {
             highest_steps = steps;
             println!("Number: {}, Steps: {}", &number.separate_with_commas(), &highest_steps.separate_with_commas());
@@ -37,6 +32,6 @@ fn main() {
                 std::process::exit(1);
             }
         }
-        number = number.add(1);
+        number = number.add(2);
     }
 }
