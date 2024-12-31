@@ -1,3 +1,5 @@
 /target
-/.idea
+.idea/
+.vscode/
+*.iml
 collatz_data.csv
