@@ -1,5 +1,3 @@
-#![forbid(unsafe_code)]
-
 extern crate num;
 
 use num::{BigInt, Integer};
